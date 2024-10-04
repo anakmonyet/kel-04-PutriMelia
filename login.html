@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        body {
+            background-size: 100%;
+            background-image: url(imgb/bg1.png);
+        }
+    </style>
+</head>
+<body background="img/'Samurai Walks Torii Path' Poster, picture, metal print, paint by TobyWanShinobi _ Displate.jfif">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="revisi.html">PT.RAHARJA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExample03">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="revisi.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeri.html">Galeri</a>
+                <li class="nav-item">
+                </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="login.html">Logout </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="dasar.html">Promo Spesial</a>
+                  </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!--Layout-->
+    <div
+        class="container d-flex justify-content-center align-items-center vh-100"
+>
+    <div class="card p-4 shadow-ig">
+        <h2 class="text-center mb-4">Login</h2>
+        <div id="alert" class="alert alert-danger d-none" role="alert">
+            Username atau password salah!
+            </div>
+        <form id="loginForm">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username"required/>
+            </div>
+            <div class="mb-3">
+                <label for="pasword" classs="form-label">Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    required
+                    />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+<!--Script Bootstrap-->
+<script src="./js/bootstrap.min.js">loo
+    <!--Custom Javascript-->
+</script>
+<script>
+    document
+    .getElementById("loginForm")
+    .addEventListener("submit", function(event){
+        event.preventDefault();
+
+        //data login statis
+        const staticUser ={
+            username: "putri melia",
+            password: "123"
+        };
+        //Ambil Nilai Input
+        const UsernameInput = document.getElementById("username").value;
+        const PasswordInput = document.getElementById("password").value;
+
+        //cek username dan password
+        if(
+            UsernameInput ===staticUser.username &&
+            PasswordInput ===staticUser.password
+        ){
+            alert("Login berhasil!");
+            window.location.href ="revisi.html";
+        }else{
+            document.getElementById("alert").classList.remove("d-none")
+        }
+    });
+</script>
+</body>
+</html>
